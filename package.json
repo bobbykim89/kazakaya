@@ -6,15 +6,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "watch:css": "postcss styles/tailwind.css -o styles/globals.css",
+    "watch": "chokidar \"./**/*.js\" -c \"npm run watch:css\"",
+    "develop": "concurrently \"npm run watch\" \"npm run dev\""
   },
   "dependencies": {
+    "firebase": "^9.0.2",
     "next": "11.1.2",
+    "next-redux-wrapper": "^7.0.5",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.5",
+    "react-redux-firebase": "^3.10.0",
+    "redux": "^4.1.1",
+    "redux-firestore": "^0.15.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.3.4",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^6.2.1",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "eslint-config-next": "11.1.2",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.15"
   }
 }
